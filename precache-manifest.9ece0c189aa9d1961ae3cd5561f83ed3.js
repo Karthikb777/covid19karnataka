@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "33d76a81a1e24dcf7ea0345c6580757e",
+    "revision": "05e8a690b84cea1cec3bcf9f17cd711e",
     "url": "/covid19karnataka/index.html"
   },
   {
-    "revision": "70e242a1aa6526906cbc",
+    "revision": "ac56f4f281cd9f863751",
     "url": "/covid19karnataka/static/css/main.f998c5cc.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid19karnataka/static/js/2.d3a3d386.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "70e242a1aa6526906cbc",
-    "url": "/covid19karnataka/static/js/main.74a7e1f6.chunk.js"
+    "revision": "ac56f4f281cd9f863751",
+    "url": "/covid19karnataka/static/js/main.d6ebd108.chunk.js"
   },
   {
     "revision": "402ec47b0ceca275b00c",
