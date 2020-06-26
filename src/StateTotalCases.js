@@ -13,7 +13,7 @@ const [ deceased, setDeceased ]   = Deceased;
 const [ total, setTotal ] = Total;
 
   if(confirmed === undefined || recovered === undefined || deceased === undefined || total === undefined) { 
- return(<h3>loading</h3>);
+ return(<div className="uk-text-meta">Loading...</div>);
      };
   return(
     <div>

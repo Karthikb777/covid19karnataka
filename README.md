@@ -1,5 +1,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This is a project created to track the daily and total statistics of covid 19 cases in Karnataka.
+The source of the data is from an open source API from [covid19india.org](https://github.com/covid19india/api). <br />
+The charts are made using (Recharts)[https://recharts.org/]. <br />
+			
+  A message for the people who are viewing this site on anything other than a smartphone.
+This site is made on a smartphone because i don't have access to a laptop or a desktop. So, I develop on my android smartphone only.
+So, please don't hate me if you see things out of place on this site because of resizing issues. I hope you understand. Thank you!<br /><br />
+			
+Stay safe, wear a mask and let's work together to stop Covid19 in our country!
+		
+
+
 ## Available Scripts
 
 In the project directory, you can run:

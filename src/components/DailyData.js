@@ -14,7 +14,7 @@ const [ updated, setUpdated ] = useState("");
 
 
   if(confirmed === undefined || recovered === undefined || deceased === undefined) {  
- return(<h3>loading</h3>);
+ return(<div className="uk-text-meta">Loading...</div>);
   }; 
   
   switch(match.params.case) {

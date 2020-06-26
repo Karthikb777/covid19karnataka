@@ -59,17 +59,16 @@ const [ updated, setUpdated ] = useState("");
 };
 
   if(confirmed === undefined || recovered === undefined || deceased === undefined) { 
- return(<h3>Loading...</h3>);  
+ return(<div className="uk-text-meta">Loading...</div>);  
   }; 
 
-//console.log(districtData);
   return(
   <Router>
   <Switch>
     <div className="uk-container">
        <Header updated={updated} tested={total.tested} />
-       <Route path='/' exact component={StateTotalCases} />
-       <Route path='/' exact component={Districts} />
+       <Route path='/covid19karnataka' exact component={StateTotalCases} />
+       <Route path='/covid19karnataka' exact component={Districts} />
        <Route path='/district/:dist' exact component={DistrictDailyData} />
        <Route path='/:case' exact component={DailyData} />
        <Route path='/about' exact component={About} />
@@ -87,7 +86,7 @@ function Header({ updated, tested }) {
 	<nav className="uk-navbar uk-margin" uk-navbar>
     <div className="uk-navbar-left">
 
-        <Link to="/"><div className="uk-navbar-item"><div className="uk-logo uk-position-center-left">COVID19<span className="uk-text-primary">KARNATAKA</span></div></div></Link>
+        <Link to="/covid19karnataka"><div className="uk-navbar-item"><div className="uk-logo uk-position-center-left">COVID19<span className="uk-text-primary">KARNATAKA</span></div></div></Link>
 		 <div className="uk-navbar-item">
             <div><Link to="/about" className="uk-link-muted uk-position-center-right">About</Link></div>
         </div>

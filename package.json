@@ -3,7 +3,7 @@
   "name": "covid19",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://covid19karnataka.kb777.github.io",
+  "homepage": "http://Karthikb777.github.io/covid19karnataka",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
