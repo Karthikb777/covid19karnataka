@@ -1,6 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Changelog:
+
 	version 1.1:
 		-Added site wide district search capability.
 		-Added dark mode.
