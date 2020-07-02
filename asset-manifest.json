@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/covid19karnataka/static/css/main.f998c5cc.chunk.css",
-    "main.js": "/covid19karnataka/static/js/main.d6ebd108.chunk.js",
-    "main.js.map": "/covid19karnataka/static/js/main.d6ebd108.chunk.js.map",
+    "main.css": "/covid19karnataka/static/css/main.85263881.chunk.css",
+    "main.js": "/covid19karnataka/static/js/main.b5a230c0.chunk.js",
+    "main.js.map": "/covid19karnataka/static/js/main.b5a230c0.chunk.js.map",
     "runtime-main.js": "/covid19karnataka/static/js/runtime-main.9c23398e.js",
     "runtime-main.js.map": "/covid19karnataka/static/js/runtime-main.9c23398e.js.map",
-    "static/js/2.d3a3d386.chunk.js": "/covid19karnataka/static/js/2.d3a3d386.chunk.js",
-    "static/js/2.d3a3d386.chunk.js.map": "/covid19karnataka/static/js/2.d3a3d386.chunk.js.map",
+    "static/js/2.f0ff91d0.chunk.js": "/covid19karnataka/static/js/2.f0ff91d0.chunk.js",
+    "static/js/2.f0ff91d0.chunk.js.map": "/covid19karnataka/static/js/2.f0ff91d0.chunk.js.map",
     "index.html": "/covid19karnataka/index.html",
-    "precache-manifest.9ece0c189aa9d1961ae3cd5561f83ed3.js": "/covid19karnataka/precache-manifest.9ece0c189aa9d1961ae3cd5561f83ed3.js",
+    "precache-manifest.148388fc04ac8eec219c1200e2a1e64c.js": "/covid19karnataka/precache-manifest.148388fc04ac8eec219c1200e2a1e64c.js",
     "service-worker.js": "/covid19karnataka/service-worker.js",
-    "static/css/main.f998c5cc.chunk.css.map": "/covid19karnataka/static/css/main.f998c5cc.chunk.css.map",
-    "static/js/2.d3a3d386.chunk.js.LICENSE.txt": "/covid19karnataka/static/js/2.d3a3d386.chunk.js.LICENSE.txt"
+    "static/css/main.85263881.chunk.css.map": "/covid19karnataka/static/css/main.85263881.chunk.css.map",
+    "static/js/2.f0ff91d0.chunk.js.LICENSE.txt": "/covid19karnataka/static/js/2.f0ff91d0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9c23398e.js",
-    "static/js/2.d3a3d386.chunk.js",
-    "static/css/main.f998c5cc.chunk.css",
-    "static/js/main.d6ebd108.chunk.js"
+    "static/js/2.f0ff91d0.chunk.js",
+    "static/css/main.85263881.chunk.css",
+    "static/js/main.b5a230c0.chunk.js"
   ]
 }
