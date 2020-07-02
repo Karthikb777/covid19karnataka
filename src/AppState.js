@@ -9,9 +9,10 @@ export const DataProvider = (props) => {
 	const [ districtData, setDistrictData ] = useState([]);
 	const [ districtsDaily, setDistrictsDaily ] = useState({});
 	const [ total, setTotal ] 		= useState({});
+	const [ dark, setDark ]		   = useState(false);
 	
 	return(
-		<DataContext.Provider value={{ Confirmed: [ confirmed, setConfirmed ], Recovered: [ recovered, setRecovered ], Deceased: [ deceased, setDeceased ], District: [ districtData, setDistrictData ], DistrictDaily: [ districtsDaily, setDistrictsDaily ], Total: [ total, setTotal ] }}>
+		<DataContext.Provider value={{ Confirmed: [ confirmed, setConfirmed ], Recovered: [ recovered, setRecovered ], Deceased: [ deceased, setDeceased ], District: [ districtData, setDistrictData ], DistrictDaily: [ districtsDaily, setDistrictsDaily ], Total: [ total, setTotal ], Dark: [ dark, setDark ] }}>
 			{props.children}
 		</DataContext.Provider>
 		);

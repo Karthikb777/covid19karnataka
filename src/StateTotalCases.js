@@ -4,13 +4,42 @@ import { LineChart, Line, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import { DataContext, DataProvider } from './AppState';
 import DailyData from './components/DailyData';
 import './App.css';
+import './Uikit.css';
 
 function StateTotalCases() {
-const { Confirmed, Recovered, Deceased, Total } = useContext(DataContext);
+const { Confirmed, Recovered, Deceased, Total, Dark } = useContext(DataContext);
 const [ confirmed, setConfirmed ] = Confirmed;
 const [ recovered, setRecovered ] = Recovered;
 const [ deceased, setDeceased ]   = Deceased;
 const [ total, setTotal ] = Total;
+const [ dark, setDark ] = Dark;
+
+const isDarkConfirmed = () => {
+		if(dark) {
+			return("uk-alert-danger uk-card uk-card-default uk-card-hover uk-margin-small uk-animation-slide-bottom dark-mode");
+			}
+		else {
+			return("uk-alert-danger uk-card uk-card-default uk-card-hover uk-margin-small uk-animation-slide-bottom light-mode");
+			}
+			};
+
+const isDarkRecovered = () => {
+		if(dark) {
+			return("uk-alert-success uk-card uk-card-default uk-card-hover uk-margin-small uk-animation-slide-bottom dark-mode");
+			}
+		else {
+			return("uk-alert-success uk-card uk-card-default uk-card-hover uk-margin-small uk-animation-slide-bottom light-mode");
+			}
+			};
+			
+const isDarkDeceased = () => {
+		if(dark) {
+			return("uk-alert-primary uk-card uk-card-default uk-card-hover uk-margin-small uk-animation-slide-bottom dark-mode");
+			}
+		else {
+			return("uk-alert-primary uk-card uk-card-default uk-card-hover uk-margin-small uk-animation-slide-bottom light-mode");
+			}
+			};
 
   if(confirmed === undefined || recovered === undefined || deceased === undefined || total === undefined) { 
  return(<div className="uk-text-meta">Loading...</div>);
@@ -18,7 +47,7 @@ const [ total, setTotal ] = Total;
   return(
     <div>
       <Link to="/confirmed">
-      <div className="uk-alert-danger uk-card uk-card-default uk-card-hover uk-margin-small uk-animation-slide-bottom">
+      <div className={isDarkConfirmed()}>
       <ResponsiveContainer width="95%" height={150}>
         <LineChart data={confirmed} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
   <Line type="monotone" dot={false} dataKey="value" stroke="red" />
@@ -29,7 +58,7 @@ const [ total, setTotal ] = Total;
 </div>
 </Link>
 		<Link to="/recovered">
-		<div className="uk-alert-success uk-card uk-card-default uk-card-hover uk-margin-small uk-animation-slide-bottom">
+		<div className={isDarkRecovered()}>
 		<ResponsiveContainer width="95%" height={150}>
 		<LineChart data={recovered} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
   <Line type="monotone" dot={false} dataKey="value" stroke="green" />
@@ -40,7 +69,7 @@ const [ total, setTotal ] = Total;
 </div>
 </Link>
 		<Link to="/deceased">
-		<div className="uk-alert-primary uk-card uk-card-default uk-card-hover uk-margin-small uk-animation-slide-bottom">
+		<div className={isDarkDeceased()}>
 		<ResponsiveContainer width="95%" height={150}>
 		<LineChart data={deceased} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
   <Line type="monotone" dot={false} dataKey="value" stroke="blue" />

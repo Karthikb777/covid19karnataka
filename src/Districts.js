@@ -2,21 +2,41 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DataContext } from './AppState';
 import './App.css';
+import './Uikit.css';
 
 function Districts() {
-const { District } = useContext(DataContext);
+const { District, Dark } = useContext(DataContext);
 const [ districtData, setDistrictData ] = District;
+const [ dark, setDark ] = Dark;
+
+const isDark = () => {
+		if(dark) {
+			return("uk-text-lead-dark");
+			}
+		else {
+			return("uk-text-lead");
+			}
+			};
+
+const isDarkTable = () => {
+		if(dark) {
+			return("uk-card uk-card-default uk-card-hover uk-margin-small dark-mode");
+			}
+		else {
+			return("uk-card uk-card-default uk-card-hover uk-margin-small light-mode");
+			}
+			};
 
   return(
     <div>	
- 	<div className="uk-text-lead">District data</div>
+ 	<div className={isDark()}>District data</div>
  	<div className="uk-text-meta">Click know more to view additional data.</div>
  	<table className="uk-table uk-table-responsive uk-table-small">
     <thead>
     </thead>
     <tbody>
     {  districtData.map( district => (
-        <tr key={district.district} className="uk-card uk-card-default uk-card-hover uk-margin-small">
+        <tr key={district.district} className={isDarkTable()}>
         	<td className="uk-text-center">
 	<svg className="bi bi-geo-alt" width="0.8em" height="0.8em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>

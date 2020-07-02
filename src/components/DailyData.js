@@ -3,7 +3,7 @@ import { DataContext, DataProvider } from '../AppState';
 import { Link } from 'react-router-dom';
 
 function DailyData({match}) {
-const { Confirmed, Recovered, Deceased, District, DistrictDaily, Total } = useContext(DataContext);
+const { Confirmed, Recovered, Deceased, District, DistrictDaily, Total, Dark } = useContext(DataContext);
 const [ confirmed, setConfirmed ] = Confirmed;
 const [ recovered, setRecovered ] = Recovered;
 const [ deceased, setDeceased ]   = Deceased;
@@ -11,6 +11,16 @@ const [ districtData, setDistrictData ] = District;
 const [ districtsDaily, setDistrictsDaily ] = DistrictDaily;
 const [ total, setTotal ] = Total;
 const [ updated, setUpdated ] = useState("");
+const [ dark, setDark ] = Dark;
+
+const isDark = () => {
+		if(dark) {
+			return("uk-text-lead-dark");
+			}
+		else {
+			return("uk-text-lead");
+			}
+			};
 
 
   if(confirmed === undefined || recovered === undefined || deceased === undefined) {  
@@ -20,7 +30,7 @@ const [ updated, setUpdated ] = useState("");
   switch(match.params.case) {
   	case "confirmed" : return(
   <>
-  <div className="uk-text-lead">Confirmed</div>
+  <div className={isDark()}>Confirmed</div>
  <table className="uk-table uk-table-divider">
     <thead>
         <tr>
@@ -42,7 +52,7 @@ const [ updated, setUpdated ] = useState("");
   		break;
   	case "recovered" : return(
   <>
-  <div className="uk-text-lead">Recovered</div>
+  <div className={isDark()}>Recovered</div>
  <table className="uk-table uk-table-divider">
     <thead>
         <tr>
@@ -64,7 +74,7 @@ const [ updated, setUpdated ] = useState("");
   		break;
   	case "deceased" : return(
   <>
-  <div className="uk-text-lead">Deceased</div>
+  <div className={isDark()}>Deceased</div>
  <table className="uk-table uk-table-divider">
     <thead>
         <tr>

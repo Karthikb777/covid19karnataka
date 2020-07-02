@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Changelog:
+	version 1.1:
+		-Added site wide district search capability.
+		-Added dark mode.
+		
+	version 1.0:
+		-initial version.
+
 This is a project created to track the daily and total statistics of covid 19 cases in Karnataka.
 The source of the data is from an open source API from [covid19india.org](https://github.com/covid19india/api). <br />
 The charts are made using (Recharts)[https://recharts.org/]. <br />
