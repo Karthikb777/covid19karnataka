@@ -1,14 +1,14 @@
-import React, { useContext, useEffect } from 'react';
-import { DataContext, DataProvider } from './AppState';
-import Home from './Home';
+import React from 'react';
+import { DataProvider } from './AppState';
+import Wrapper from './Wrapper';
 import './App.css';
+import './Uikit.css';
 
-function App() {
- 
+function App() { 
   return (
     <DataProvider>
-    <div className="App">
-       <Home />
+    <div className=''>
+       <Wrapper />
     </div>
     </DataProvider>
   );
