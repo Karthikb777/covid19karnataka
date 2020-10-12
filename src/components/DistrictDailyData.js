@@ -58,7 +58,9 @@ const isDark = () => {
   <path d="M10 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
 </svg>  Deceased: {setDistrict.deceased}</p>
 			
-			<div className="uk-overflow-auto uk-margin-medium-top">
+
+	{/* District daily data feature is removed because covid19india api stopped providing districy daily data */}
+			{/* <div className="uk-overflow-auto uk-margin-medium-top">
 			<div className="uk-text-meta">Swipe left to see all the table data.</div>
 	    <table className="uk-table uk-table-small uk-table-divider uk-animation-slide-bottom">
         <thead>
@@ -70,19 +72,20 @@ const isDark = () => {
                 <th>Deceased</th>
             </tr>
         </thead>
+        
         <tbody>
-        {districtsDaily[currentDistrict].map( daily => (
+        
             <tr>
-                <td>{daily.date}</td>
-                <td>{daily.confirmed}</td>
-                <td>{daily.active}</td>
-                <td>{daily.recovered}</td>
-                <td>{daily.deceased}</td>
+                <td>{districtsDaily[currentDistrict].date}</td>
+                <td>{districtsDaily[currentDistrict].confirmed}</td>
+                <td>{districtsDaily[currentDistrict].active}</td>
+                <td>{districtsDaily[currentDistrict].recovered}</td>
+                <td>{districtsDaily[currentDistrict].deceased}</td>
             </tr>
-            ))}
+           
         </tbody>
     </table>
-	</div>
+	</div> */}
 	</div>
 	</>
 	);

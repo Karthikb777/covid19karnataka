@@ -12,7 +12,15 @@ export const DataProvider = (props) => {
 	const [ dark, setDark ]		   = useState(false);
 	
 	return(
-		<DataContext.Provider value={{ Confirmed: [ confirmed, setConfirmed ], Recovered: [ recovered, setRecovered ], Deceased: [ deceased, setDeceased ], District: [ districtData, setDistrictData ], DistrictDaily: [ districtsDaily, setDistrictsDaily ], Total: [ total, setTotal ], Dark: [ dark, setDark ] }}>
+		<DataContext.Provider value={{ 
+		Confirmed: [ confirmed, setConfirmed ], 
+		Recovered: [ recovered, setRecovered ], 
+		Deceased: [ deceased, setDeceased ], 
+		District: [ districtData, setDistrictData ], 
+		DistrictDaily: [ districtsDaily, setDistrictsDaily ], 
+		Total: [ total, setTotal ], 
+		Dark: [ dark, setDark ] 
+		}}>
 			{props.children}
 		</DataContext.Provider>
 		);

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { DataContext } from './AppState';
 import './App.css';
@@ -6,8 +6,8 @@ import './Uikit.css';
 
 function Districts() {
 const { District, Dark } = useContext(DataContext);
-const [ districtData, setDistrictData ] = District;
-const [ dark, setDark ] = Dark;
+const [ districtData ] = District;
+const [ dark ] = Dark;
 
 const isDark = () => {
 		if(dark) {
@@ -28,7 +28,7 @@ const isDarkTable = () => {
 			};
 
   return(
-    <div>	
+  <div>	
  	<div className={isDark()}>District data</div>
  	<div className="uk-text-meta">Click know more to view additional data.</div>
  	<table className="uk-table uk-table-responsive uk-table-small">
@@ -37,10 +37,10 @@ const isDarkTable = () => {
     <tbody>
     {  districtData.map( district => (
         <tr key={district.district} className={isDarkTable()}>
-        	<td className="uk-text-center">
+        	<td className="uk-text-left">
 	<svg className="bi bi-geo-alt" width="0.8em" height="0.8em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-</svg>  {district.district}</td>
+  </svg>  {district.district}</td>
             <td><svg className="bi bi-exclamation-circle" width="0.8em" height="0.8em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
   <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>

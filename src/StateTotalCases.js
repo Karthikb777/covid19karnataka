@@ -1,18 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Link,BrowserRouter as router } from 'react-router-dom';
-import { LineChart, Line, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { DataContext, DataProvider } from './AppState';
-import DailyData from './components/DailyData';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { LineChart, Line, Tooltip, ResponsiveContainer } from 'recharts';
+import { DataContext } from './AppState';
 import './App.css';
 import './Uikit.css';
 
 function StateTotalCases() {
 const { Confirmed, Recovered, Deceased, Total, Dark } = useContext(DataContext);
-const [ confirmed, setConfirmed ] = Confirmed;
-const [ recovered, setRecovered ] = Recovered;
-const [ deceased, setDeceased ]   = Deceased;
-const [ total, setTotal ] = Total;
-const [ dark, setDark ] = Dark;
+const [ confirmed ] = Confirmed;
+const [ recovered ] = Recovered;
+const [ deceased ]   = Deceased;
+const [ total ] = Total;
+const [ dark ] = Dark;
 
 const isDarkConfirmed = () => {
 		if(dark) {
@@ -46,7 +45,7 @@ const isDarkDeceased = () => {
      };
   return(
     <div>
-      <Link to="/confirmed">
+      <Link className='uk-link-reset' to="/confirmed">
       <div className={isDarkConfirmed()}>
       <ResponsiveContainer width="95%" height={150}>
         <LineChart data={confirmed} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
@@ -57,7 +56,7 @@ const isDarkDeceased = () => {
       <p className="uk-padding-small uk-text-center">Confirmed cases: {total.confirmed}</p>
 </div>
 </Link>
-		<Link to="/recovered">
+		<Link className='uk-link-reset' to="/recovered">
 		<div className={isDarkRecovered()}>
 		<ResponsiveContainer width="95%" height={150}>
 		<LineChart data={recovered} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
@@ -68,7 +67,7 @@ const isDarkDeceased = () => {
     <p className="uk-padding-small uk-text-center">Recovered cases: {total.recovered}</p>
 </div>
 </Link>
-		<Link to="/deceased">
+		<Link className='uk-link-reset' to="/deceased">
 		<div className={isDarkDeceased()}>
 		<ResponsiveContainer width="95%" height={150}>
 		<LineChart data={deceased} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>

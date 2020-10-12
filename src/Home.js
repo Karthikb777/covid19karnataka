@@ -41,10 +41,13 @@ const [ updated, setUpdated ] = useState("");
     const totalRes = await totalData.json();
     setTotal(totalRes.KA.total);
     setUpdated(totalRes.KA.meta.tested.last_updated);
-    
-    const districtDaily = await fetch('https://api.covid19india.org/districts_daily.json');
-    const districtDailyRes = await districtDaily.json();
-    setDistrictsDaily(districtDailyRes.districtsDaily.Karnataka);
+	
+	/* District daily data feature is removed because covid19india api stopped providing districy daily data */
+
+    const districtDaily = await fetch('https://api.covid19india.org/state_district_wise.json');
+	const districtDailyRes = await districtDaily.json();
+	console.log(districtDailyRes.Karnataka.districtData);
+    setDistrictsDaily(districtDailyRes.Karnataka.districtData);
 
     // the code below is used to fetch data for creating graphs for daily cases
     const testData = await fetch('https://api.covid19india.org/states_daily.json');
@@ -82,16 +85,17 @@ const [ updated, setUpdated ] = useState("");
   return(
   <Router>
   <Switch>
-    <div className={isDark()}>
+    
+	<div className={isDark()}>
        <Header updated={updated} tested={total.tested} />
        <Route path='/covid19karnataka' exact component={StateTotalCases} />
        <Route path='/covid19karnataka' exact component={Districts} />
        <Route path='/district/:dist' exact component={DistrictDailyData} />
        <Route path='/:case' exact component={DailyData} />
        <Route path='/about' exact component={About} />
-       
        <div className="uk-margin-large-top"></div>
     </div>
+	
     </Switch>
     </Router>
   );
@@ -110,7 +114,7 @@ function Header({ updated, tested }) {
 	<nav className="uk-navbar uk-margin-small-top" uk-navbar>
     <div className="uk-navbar-left">
 
-        <Link to="/covid19karnataka"><div className="uk-navbar-item"><div className="uk-logo uk-position-center-left uk-remove-margin-bottom">COVID19<span className="uk-text-primary">KARNATAKA</span></div></div></Link>
+        <Link className='uk-link-muted' to="/covid19karnataka"><div className="uk-navbar-item"><div className="uk-logo uk-position-center-left uk-remove-margin-bottom">COVID19<span className="uk-text-primary">KARNATAKA</span></div></div></Link>
 		 <div className="uk-navbar-item">
 			<div className="uk-position-center-right uk-margin-xlarge-right"><Link to="/about" className="uk-link-muted">About</Link></div>
 	</div>
@@ -119,7 +123,7 @@ function Header({ updated, tested }) {
 	</div>
     </div>
 	</nav>
-     <Search />
+     
     <div className="uk-text-meta">
 	<svg className="bi bi-arrow-clockwise" width="0.9em" height="0.9em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M3.17 6.706a5 5 0 0 1 7.103-3.16.5.5 0 1 0 .454-.892A6 6 0 1 0 13.455 5.5a.5.5 0 0 0-.91.417 5 5 0 1 1-9.375.789z"/>
@@ -139,7 +143,7 @@ function Header({ updated, tested }) {
 	const [ dark, setDark ] = Dark;
 		if(dark) {
 			return(
-			<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-brightness-high-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+			<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" className="bi bi-brightness-high-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/>
   <path fill-rule="evenodd" d="M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
 </svg>
@@ -147,7 +151,7 @@ function Header({ updated, tested }) {
 		}
 		else {
 			return(
-			<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-moon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+			<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" className="bi bi-moon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"/>
 </svg>
 			);

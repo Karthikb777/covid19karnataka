@@ -1,18 +1,19 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
-import { DataContext, DataProvider } from './AppState';
+import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { DataContext } from './AppState';
 import './Uikit.css';
 
+// Search functionality was removed due to some bugs, will be added in the next version.
 function Search() {
-const { Confirmed, Recovered, Deceased, District, DistrictDaily, Total, Dark } = useContext(DataContext);
-const [ confirmed, setConfirmed ] = Confirmed;
-const [ recovered, setRecovered ] = Recovered;
-const [ deceased, setDeceased ]   = Deceased;
-const [ districtData, setDistrictData ] = District;
-const [ districtsDaily, setDistrictsDaily ] = DistrictDaily;
-const [ total, setTotal ] = Total;
-const [ dark, setDark ] = Dark;
-const [ updated, setUpdated ] = useState("");
+const { District } = useContext(DataContext);
+const [ districtData ] = District;
+// const [ confirmed, setConfirmed ] = Confirmed;
+// const [ recovered, setRecovered ] = Recovered;
+// const [ deceased, setDeceased ]   = Deceased;
+// const [ districtsDaily, setDistrictsDaily ] = DistrictDaily;
+// const [ total, setTotal ] = Total;
+// const [ dark, setDark ] = Dark;
+// const [ updated, setUpdated ] = useState("");
 const [ key, setKey ] = useState("");
 const [ searchRes, setSearchRes ] = useState([]);
 
@@ -39,7 +40,7 @@ const [ searchRes, setSearchRes ] = useState([]);
 		setSearchRes([]);
 		};
 
-	console.log(searchRes);
+	// console.log(searchRes);
 	return(
 	<>
 	<form className="uk-search uk-search-default uk-margin-small-bottom">
@@ -54,7 +55,7 @@ const [ searchRes, setSearchRes ] = useState([]);
     <div className="uk-dropdown-grid uk-child-width-1-2@m" data-uk-grid>
         <div>
             <ul className="uk-nav uk-dropdown-nav link-search">   
-            	<li><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down-short" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            	<li><svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-arrow-down-short" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M4.646 7.646a.5.5 0 0 1 .708 0L8 10.293l2.646-2.647a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 0-.708z"/>
   <path fill-rule="evenodd" d="M8 4.5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5z"/>
 </svg> Click on the results...</li>
