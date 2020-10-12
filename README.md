@@ -1,10 +1,6 @@
 This is a project created to track the daily and total statistics of covid 19 cases in Karnataka.
 The source of the data is from an open source API from [covid19india.org](https://github.com/covid19india/api). <br />
 The charts are made using [Recharts](https://recharts.org/). <br />
-<<<<<<< HEAD
-			
-  A message for the people who are viewing this site on anything other than a smartphone.
-=======
 You can view the site [here](http://Karthikb777.github.io/covid19karnataka). <br />
 
 
@@ -23,7 +19,6 @@ Changelog:
 
 		
   ~~A message for the people who are viewing this site on anything other than a smartphone.
->>>>>>> version-1.1
 This site is made on a smartphone because i don't have access to a laptop or a desktop. So, I develop on my android smartphone only.
 So, please don't hate me if you see things out of place on this site because of resizing issues. I hope you understand. Thank you!~~ Was made on a Smartphone.<br /><br /> 
 			
