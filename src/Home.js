@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { DataContext, DataProvider } from './AppState';
 import StateTotalCases from './StateTotalCases';
 import Search from './Search';
+// add UIKit css file to src folder.
 import './Uikit.css';
 import Districts from './Districts';
 import DailyData from './components/DailyData';
