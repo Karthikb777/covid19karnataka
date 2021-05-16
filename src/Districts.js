@@ -4,6 +4,8 @@ import { DataContext } from './AppState';
 import './App.css';
 import './Uikit.css';
 
+// TODO: convert this component from a table into a grid of cards.
+
 function Districts() {
 const { District, Dark } = useContext(DataContext);
 const [ districtData ] = District;

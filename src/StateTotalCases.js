@@ -44,7 +44,8 @@ const isDarkDeceased = () => {
  return(<div className="uk-text-meta">Loading...</div>);
      };
   return(
-    <div>
+	  <>
+    <div className="uk-grid uk-grid-small uk-child-width-expand@s" uk-grid>
       <Link className='uk-link-reset' to="/confirmed">
       <div className={isDarkConfirmed()}>
       <ResponsiveContainer width="95%" height={150}>
@@ -78,8 +79,9 @@ const isDarkDeceased = () => {
 	<p className="uk-padding-small uk-text-center">Deceased cases: {total.deceased}</p>
 </div>
 </Link>
-	<div className="uk-text-meta uk-margin-medium-bottom">Click on the cards above to see the daily data.</div>
     </div> 
+	<div className="uk-text-meta uk-margin-medium-bottom">Click on the cards above to see the daily data.</div>
+	</>
   );
 };
 
