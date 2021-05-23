@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/covid19karnataka/static/css/main.cc04c6bc.chunk.css",
-    "main.js": "/covid19karnataka/static/js/main.48a80ed3.chunk.js",
-    "main.js.map": "/covid19karnataka/static/js/main.48a80ed3.chunk.js.map",
+    "main.css": "/covid19karnataka/static/css/main.dc637d1c.chunk.css",
+    "main.js": "/covid19karnataka/static/js/main.71d7eb76.chunk.js",
+    "main.js.map": "/covid19karnataka/static/js/main.71d7eb76.chunk.js.map",
     "runtime-main.js": "/covid19karnataka/static/js/runtime-main.9c23398e.js",
     "runtime-main.js.map": "/covid19karnataka/static/js/runtime-main.9c23398e.js.map",
     "static/js/2.87790bed.chunk.js": "/covid19karnataka/static/js/2.87790bed.chunk.js",
     "static/js/2.87790bed.chunk.js.map": "/covid19karnataka/static/js/2.87790bed.chunk.js.map",
     "index.html": "/covid19karnataka/index.html",
-    "precache-manifest.6a355d50e302e8b679c890f3728eb4e6.js": "/covid19karnataka/precache-manifest.6a355d50e302e8b679c890f3728eb4e6.js",
+    "precache-manifest.90e5b81cd54d8d3d75ec81b1780244b0.js": "/covid19karnataka/precache-manifest.90e5b81cd54d8d3d75ec81b1780244b0.js",
     "service-worker.js": "/covid19karnataka/service-worker.js",
-    "static/css/main.cc04c6bc.chunk.css.map": "/covid19karnataka/static/css/main.cc04c6bc.chunk.css.map",
+    "static/css/main.dc637d1c.chunk.css.map": "/covid19karnataka/static/css/main.dc637d1c.chunk.css.map",
     "static/js/2.87790bed.chunk.js.LICENSE.txt": "/covid19karnataka/static/js/2.87790bed.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9c23398e.js",
     "static/js/2.87790bed.chunk.js",
-    "static/css/main.cc04c6bc.chunk.css",
-    "static/js/main.48a80ed3.chunk.js"
+    "static/css/main.dc637d1c.chunk.css",
+    "static/js/main.71d7eb76.chunk.js"
   ]
 }
