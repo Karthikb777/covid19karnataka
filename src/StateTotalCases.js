@@ -54,7 +54,7 @@ const isDarkDeceased = () => {
   <Tooltip />
 </LineChart>
 </ResponsiveContainer>
-      <p className="uk-padding-small uk-text-center">Confirmed cases: {total.confirmed}</p>
+      <p className="uk-padding-small uk-text-center">Confirmed: {total.confirmed}</p>
 </div>
 </Link>
 		<Link className='uk-link-reset' to="/recovered">
@@ -65,7 +65,7 @@ const isDarkDeceased = () => {
   <Tooltip />
 </LineChart>
 </ResponsiveContainer>
-    <p className="uk-padding-small uk-text-center">Recovered cases: {total.recovered}</p>
+    <p className="uk-padding-small uk-text-center">Recovered: {total.recovered}</p>
 </div>
 </Link>
 		<Link className='uk-link-reset' to="/deceased">
@@ -76,7 +76,7 @@ const isDarkDeceased = () => {
   <Tooltip />
 </LineChart>
 </ResponsiveContainer>
-	<p className="uk-padding-small uk-text-center">Deceased cases: {total.deceased}</p>
+	<p className="uk-padding-small uk-text-center">Deceased: {total.deceased}</p>
 </div>
 </Link>
     </div> 

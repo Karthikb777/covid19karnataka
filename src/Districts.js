@@ -22,18 +22,22 @@ const isDark = () => {
 
 const isDarkTable = () => {
 		if(dark) {
-			return("uk-card uk-card-default uk-card-hover uk-margin-small dark-mode");
+			return("dark-mode");
 			}
 		else {
-			return("uk-card uk-card-default uk-card-hover uk-margin-small light-mode");
+			return("light-mode");
 			}
 			};
+
+      if (districtData == []) {
+        return <h3>Loading</h3>
+      }
 
   return(
   <div>	
  	<div className={isDark()}>District data</div>
  	<div className="uk-text-meta">Click know more to view additional data.</div>
- 	<table className="uk-table uk-table-responsive uk-table-small">
+ 	<table className="uk-table uk-table-divider uk-table-responsive uk-table-small">
     <thead>
     </thead>
     <tbody>

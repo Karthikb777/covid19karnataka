@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { DataContext, DataProvider } from './AppState';
 import StateTotalCases from './StateTotalCases';
 import Search from './Search';
+import { DISTRICTS } from './Utils';
 // add UIKit css file to src folder.
 import './Uikit.css';
 import Districts from './Districts';
@@ -33,21 +34,24 @@ const [ updated, setUpdated ] = useState("");
    districtRes.filter( res => {
    	if(res.statecode === "KA") {
        res.districtData.map( dist => {
+		//    console.log(dist.district);
        	setDistrictData( prev => [...prev,dist]);
 		 });
 	}
 });
 
-    const totalData = await fetch('https://api.covid19india.org/v3/data.json');
+    // const totalData = await fetch('https://api.covid19india.org/v3/data.json');
+    const totalData = await fetch('https://api.covid19india.org/v4/min/data.min.json');
     const totalRes = await totalData.json();
     setTotal(totalRes.KA.total);
+    console.log(totalRes.KA.districts);
     setUpdated(totalRes.KA.meta.tested.last_updated);
 	
 	/* District daily data feature is removed because covid19india api stopped providing districy daily data */
 
     const districtDaily = await fetch('https://api.covid19india.org/state_district_wise.json');
 	const districtDailyRes = await districtDaily.json();
-	console.log(districtDailyRes.Karnataka.districtData);
+	// console.log(districtDailyRes.Karnataka.districtData);
     setDistrictsDaily(districtDailyRes.Karnataka.districtData);
 
     // the code below is used to fetch data for creating graphs for daily cases
@@ -74,15 +78,13 @@ const [ updated, setUpdated ] = useState("");
 			}
 			};
 
-  if(confirmed === undefined || recovered === undefined || deceased === undefined) { 
+  if(confirmed === [] || recovered === [] || deceased === []) { 
  return(<div className="uk-text-meta">Loading...</div>);  
   }; 
-// district search functionality testing
-/*districtData.map( dist => {
-	if(dist.district.toLowerCase().includes("ba")) {
-	console.log(dist.district);
-	}
-	});*/
+
+	setTimeout(() => {
+		
+	}, 0);
   return(
   <Router>
   <Switch>
@@ -144,7 +146,9 @@ function Header({ updated, tested }) {
 	const [ dark, setDark ] = Dark;
 		if(dark) {
 			return(
-			<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" className="bi bi-brightness-high-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+			<svg style={{
+				cursor: "pointer"
+			}} width="1.2em" height="1.2em" viewBox="0 0 16 16" className="bi bi-brightness-high-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/>
   <path fill-rule="evenodd" d="M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
 </svg>
@@ -152,7 +156,9 @@ function Header({ updated, tested }) {
 		}
 		else {
 			return(
-			<svg width="1.2em" height="1.2em" viewBox="0 0 16 16" className="bi bi-moon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+			<svg style={{
+				cursor: "pointer"
+			}} width="1.2em" height="1.2em" viewBox="0 0 16 16" className="bi bi-moon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"/>
 </svg>
 			);
